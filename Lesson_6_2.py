@@ -1,4 +1,5 @@
 import pygame
+import math
 
 # Initialize the game engine
 pygame.init()
@@ -18,6 +19,8 @@ clock = pygame.time.Clock()
 
 # ---------------------------
 # Initialize global variables
+font = pygame.font.SysFont('Arial', 25, True, False)
+text = font.render('Welcome to my Game', True, (0, 0, 0))
 
 # ---------------------------
 
@@ -34,6 +37,19 @@ while running:
 
     # ----- DRAWING -----
     screen.fill((255, 255, 255))  # always the first drawing command
+    
+    pygame.draw.line(screen, (0, 255, 0), [10, 10], [10, 100], 5)
+    pygame.draw.line(screen, (0, 25, 46), [66, 159], [357, 255], 5)
+    pygame.draw.rect(screen, (0, 0, 0), [20, 20, 250, 100], 2)
+    pygame.draw.rect(screen, (200, 0, 200), [250, 300, 250, 100])
+    pygame.draw.rect(screen, (200, 0, 200), [250, 300, 250, 100])
+    pygame.draw.ellipse(screen, (0, 0, 255), [20, 20, 250, 100], 3)
+    pygame.draw.ellipse(screen, (200, 5, 200), [599, 300, 100, 100])
+    pygame.draw.arc(screen, (100, 100, 100), [200, 200, 150, 150], math.pi/2, math.pi, 2)
+    pygame.draw.polygon(screen, (230, 182, 38), [[600, 10], [450, 50], [650, 70]], 2)
+    pygame.draw.polygon(screen, (230, 182, 38), [[300, 50], [450, 50], [650, 70], [200, 43]], 2)
+    screen.blit(text, [300, 100])
+
 
     # Must be the last two lines of the game loop
     pygame.display.flip()
